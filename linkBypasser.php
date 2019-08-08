@@ -52,6 +52,7 @@ class LinkBypasserShortID {
 }
 
 // ex. https://mytreep.icu/9zdqC
+// if you want create some link, visited: http://shortid.co/
 
 $class = new LinkBypasserShortID();
 
