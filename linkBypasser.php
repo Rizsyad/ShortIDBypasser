@@ -56,7 +56,7 @@ class LinkBypasserShortID {
 
 $class = new LinkBypasserShortID();
 
-echo "\n [?] Enter Link ShortID ( ex. https://mytreep.icu/9zdqC ): ";
+echo "\n [?] Enter Link ShortID.co ( ex. https://mytreep.icu/9zdqC ): ";
 $input = trim(fgets(STDIN, 1024));
 echo "\n [!] Loading.....";
 sleep(5);
