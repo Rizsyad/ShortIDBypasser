@@ -1,9 +1,11 @@
 <?php
 ob_clean();
 
-class LinkBypasserShortID {
+class LinkBypasserShortID 
+{
 
-	public function get_header($url) {
+	public function get_header($url) 
+	{
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -29,13 +31,15 @@ class LinkBypasserShortID {
 
 	}
 
-	public function get_link_visited($url) {
+	public function get_link_visited($url) 
+	{
 		$data = file_get_contents($url);
 		preg_match('/<a href="(.*)" rel="nofollow">(.*)<\/a>/mi', $data, $matches, PREG_OFFSET_CAPTURE, 0);
 		return "https://zanbooredana.com".$matches[1][0];
 	}
 
-	public function showing_link($urls,$cookie) {
+	public function showing_link($urls,$cookie) 
+	{
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $urls);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -51,12 +55,11 @@ class LinkBypasserShortID {
 	}
 }
 
-// ex. https://mytreep.icu/9zdqC
-// if you want create some link, visited: http://shortid.co/
+// ex. https://shortid.co/YQMxj
 
 $class = new LinkBypasserShortID();
 
-echo "\n [?] Enter Link ShortID.co ( ex. https://mytreep.icu/9zdqC ): ";
+echo "\n [?] Masukan Link ShortID ( ex. https://shortid.co/YQMxj ): ";
 $input = trim(fgets(STDIN, 1024));
 echo "\n [!] Loading.....";
 sleep(5);
@@ -67,9 +70,11 @@ sleep(5);
 echo "\n [!] Please wait, almost to get real link.....";
 sleep(3);
 $show = $class->showing_link($shotlink,$cookie);
-if ($show != "") {
+if ($show != "") 
+{
 	echo "\n [+] Success to Bypassed: ".$show."\n\n";
-} else {
+} 
+else 
+{
 	echo "\n [-] Can't to Bypassed :( \n\n";
 }
-
